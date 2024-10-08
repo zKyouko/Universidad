@@ -52,6 +52,23 @@ public:
 
 Libro::Libro(string id, string titulo, string autor, int anioPublicacion)
     : id(id), titulo(titulo), autor(autor), anioPublicacion(anioPublicacion), disponible(true) {}
+    
+class biblioteca {
+private:
+    vector<Libro*> libros;
+    vector<Usuario*> usuarios;
+
+public:
+    Biblioteca();
+    void agregarLibro(Libro* libro);
+    void agregarUsuario(Usuario* usuario);
+    void prestarLibro(string idLibro, string idUsuario);
+    void devolverLibro(string idLibro, string idUsuario);
+    Libro* buscarLibro(string idLibro) const;
+    Usuario* buscarUsuario(string idUsuario) const;
+    string mostrarLibros() const;
+    string mostrarUsuarios() const;
+};
 
 int main() {
     return 0;
